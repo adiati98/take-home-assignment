@@ -1,5 +1,6 @@
 import './App.css';
 import React from "react";
+import ChangeText from './ChangeText'
 
 function App() {
   const [textInput, setTextInput] = React.useState('Here is some example text.');
@@ -18,10 +19,8 @@ function App() {
     event.preventDefault();
     if (textInput === '') {
       alert('Please insert text')
-    } else if (conversionMode === 'lowercase') {
-      setTextOutput(textInput.toLowerCase())
     } else {
-      setTextOutput(textInput.toUpperCase()) 
+      setTextOutput(ChangeText(conversionMode, textInput))
     }
   };
 
